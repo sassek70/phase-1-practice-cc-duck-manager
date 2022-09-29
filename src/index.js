@@ -46,15 +46,17 @@ const duckDetails = (duck) => {
 
 const createDuckForm = () => {
     const form = document.getElementById('new-duck-form')
-    const newName = document.getElementsByName('duck-name-input')
-    const newImage = document.getElementsByName('duck-image-input')
+    const newName = document.getElementsByTagName('input')[0]
+    const newImage = document.getElementsByTagName('input')[1]
+
     
     const newDuckObj = {
-        name: newName.textContent,
-        img_url: newImage.textContent,
-        Likes: 0
+        name: newName.value,
+        img_url: newImage.value,
+        likes: 0
     }
     
+    console.log(newDuckObj)
     createImage(newDuckObj)
     form.reset()
     
